@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <script src="/libs/react.development.js"></script>
+  <script src="/libs/react-dom.development.js"></script>
+  <script src="/libs/babel-standalone.js"></script>
+</head>
+
+<body>
+  <div id="app"></div>
+  <script type="text/babel">
+    const appEl = document.querySelector('#app');
+    const root = ReactDOM.createRoot(appEl);
+
+    // function App() {
+    //   return <h1>これはコンポーネントです</h1>;
+    // }
+    const App = () => (
+      <div>
+        <h1>これはコンポーネントです</h1>
+      </div>
+    );
+    root.render(<App />);
+  </script>
+</body>
+
+</html>
