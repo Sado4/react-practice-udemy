@@ -9,13 +9,13 @@ const Expression = () => {
   const bool = false;
   const num = true;
 
-  console.log(num);
+  // console.log(num);
   return (
     <div className={name.toLowerCase()}>
       <h3>Hello {name}</h3>
       <h3>{array}</h3>
       <h3>{hello('Hello')}</h3>
-      {jsx}
+      {/* {jsx} */}
       <h3>{obj.obj}</h3>
       <h3>{bool}</h3>
     </div>
