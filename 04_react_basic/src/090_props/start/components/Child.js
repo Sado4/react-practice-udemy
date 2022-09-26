@@ -5,13 +5,17 @@
 
 import "./Child.css";
 
-const Child = ({color = 'none', dada = 'none'}) => {
-  console.log(color, dada);
-  return (
-    <div className={`component ${color}`}>
-      <h3>Hello Component</h3>
-    </div>
-  );
+const Child = (ob) => {
+  console.log(ob);
+  // return (
+  //   // <div className={`component ${color}`}>
+  //   //   <h3>Hello Component</h3>
+  //   //   <h3>{num}</h3>
+  //   //   <h3>{fn('Takashi')}</h3>
+  //   //   <h3>{boo ? 'true' : 'false'}</h3>
+  //   //   <h3>{obj.name + obj.age}</h3>
+  //   // </div>
+  // );
 };
 
 export default Child;
