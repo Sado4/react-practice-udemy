@@ -4,7 +4,7 @@ const Example = () => {
   const personObj = { name: "Tom", age: 18 };
   const [person, setPerson] = useState(personObj);
   const changeName = (e) => {
-    setPerson({ name: e.target.value, age: person.age });
+    setPerson({ ...person, name: e.target.value });
   }
   const changeAge = (e) => {
     setPerson({ name: person.name, age: e.target.value });
