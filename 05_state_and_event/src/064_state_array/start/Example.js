@@ -5,7 +5,7 @@ const Example = () => {
   const [nums, setNums] = useState(numArray);
 
   const shuffle = () => {
-    const newNums = [...nums];
+    const newNums = [...nums]
     const popNumber = newNums.pop();
     newNums.unshift(popNumber);
     setNums(newNums);
