@@ -14,7 +14,7 @@ const Example = () => {
   return (
     <>
       <h1>{nums}</h1>
-      <button onClick={shuffle}>shuffle</button>
+      <button onClick={shuffle}>shuffle!</button>
     </>
   );
 };
