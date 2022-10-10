@@ -8,7 +8,7 @@ const Example = () => {
     });
     // setToggle((bool) => {
     //   console.log(bool);
-    // });
+    // })
   }
   return (
     <>
