@@ -4,10 +4,10 @@ const Example = () => {
   const [toggle, setToggle] = useState(true);
   const switchToggle = () => {
     setToggle((bool) => {
-      return !bool;
+      return !bool
     });
     // setToggle((bool) => {
-    //   console.log(bool);
+    //   console.log(bool)
     // })
   }
   return (
