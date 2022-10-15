@@ -1,11 +1,10 @@
-import { useState } from "react";
+import { useState } from 'react';
 
 // POINT input要素、textarea要素の使い方
 const Example = () => {
+  const [val, setVal] = useState('');
+  const clearVal = () => setVal('');
 
-  const [val, setVal] = useState("");
-  const clearVal = () => setVal("");
-  
   return (
     <div>
       <label htmlFor="456">ラベル</label>
