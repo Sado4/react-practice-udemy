@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { createPortal } from 'react-dom';
 import Modal from './components/Modal';
 
@@ -21,26 +21,53 @@ const ModalPortal = ({ children }) => {
 
 const Example = () => {
   const [modalOpen, setModalOpen] = useState(false);
-  return (
-    <div onClick={() => console.log('空のdiv')}>
-      <div
-        className="container start"
-        onClick={() => console.log('container')}
-      ></div>
 
-      <button
-        type="button"
-        onClick={() => setModalOpen(true)}
-        disabled={modalOpen}
-      >
+  const ref = useRef(null);
+
+  const showModal = () => {
+    if (ref.current) {
+      ref.current.showModal();
+    }
+  };
+
+  const closeModal = () => {
+    if (ref.current) {
+      ref.current.close();
+    }
+  };
+  return (
+    // <div onClick={() => }>
+    //   <div
+    //     className="container start"
+    //     onClick={() => }
+    //   ></div>
+
+    //   <button
+    //     type="button"
+    //     onClick={() => setModalOpen(true)}
+    //     disabled={modalOpen}
+    //   >
+    //     モーダルを表示する
+    //   </button>
+    //   {modalOpen && (
+    //     <ModalPortal>
+    //       <Modal handleCloseClick={() => setModalOpen(false)} />
+    //     </ModalPortal>
+    //   )}
+    // </div>
+
+    // dialogを使ったモーダル実践
+    <>
+      <dialog ref={ref}>
+        <p>モーダル</p>
+        <button type="button" onClick={closeModal}>
+          閉じる
+        </button>
+      </dialog>
+      <button type="button" onClick={showModal}>
         モーダルを表示する
       </button>
-      {modalOpen && (
-        <ModalPortal>
-          <Modal handleCloseClick={() => setModalOpen(false)} />
-        </ModalPortal>
-      )}
-    </div>
+    </>
   );
 };
 

@@ -1,10 +1,10 @@
-import { useState, useRef } from "react";
+import { useState, useRef } from 'react';
 
 /* POINT useRefでDOMを取得
 refオブジェクトをref属性に渡すとDOMを参照することができます。
 */
 const Case1 = () => {
-  const [value, setValue] = useState("");
+  const [value, setValue] = useState('');
   const inputRef = useRef();
 
   // console.log(inputRef);
@@ -33,7 +33,7 @@ const Case2 = () => {
   return (
     <div>
       <h3>ユースケース2</h3>
-      <video style={{ maxWidth: "100%" }} ref={videoRef}>
+      <video style={{ maxWidth: '100%' }} ref={videoRef}>
         <source src="./sample.mp4"></source>
       </video>
       <button
@@ -47,7 +47,7 @@ const Case2 = () => {
           setPlaying((prev) => !prev);
         }}
       >
-        {playing ? "Stop" : "Play"}
+        {playing ? 'Stop' : 'Play'}
       </button>
     </div>
   );
@@ -70,7 +70,7 @@ const Case3 = () => {
   const updateRef = () => {
     /* コンソールを見るとブラウザの表示と、ref.currentの中身が異なることを確認できます */
     ref.current = createTimeStamp();
-    console.log("ref.current -> ", ref.current);
+    console.log('ref.current -> ', ref.current);
   };
   return (
     <div>
