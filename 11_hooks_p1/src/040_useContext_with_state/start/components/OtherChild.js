@@ -1,17 +1,17 @@
-import { useState } from "react";
+import { useContext } from 'react';
+import { MyContext } from '../Example';
 
 const OtherChild = () => {
-  const [ value, setValue ] = useState(0);
+  const [, setValue] = useContext(MyContext);
 
-  const clickHandler = (e) => {
+  const clickHandler = () => {
     setValue((prev) => prev + 1);
   };
 
   return (
-    <div>
+    <div style={{ border: '1px solid black' }}>
       <h3>他の子コンポーネント</h3>
       <button onClick={clickHandler}>+</button>
-      <h3>{value}</h3>
     </div>
   );
 };
