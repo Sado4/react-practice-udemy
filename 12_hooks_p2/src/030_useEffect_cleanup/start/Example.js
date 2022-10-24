@@ -1,14 +1,14 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState } from 'react';
 const Example = () => {
   const [isDisp, setIsDisp] = useState(true);
 
   return (
     <>
-      {isDisp && <Timer/>}
-      <button onClick={() => setIsDisp(prev => !prev)}>トグル</button>
+      {isDisp && <Timer />}
+      <button onClick={() => setIsDisp((prev) => !prev)}>トグル</button>
     </>
-  )
-}
+  );
+};
 const Timer = () => {
   const [time, setTime] = useState(0);
 
@@ -17,24 +17,24 @@ const Timer = () => {
     let intervalId = null;
     intervalId = window.setInterval(() => {
       // console.log('interval called');
-      setTime(prev => prev + 1);
+      setTime((prev) => prev + 1);
     }, 1000);
     return () => {
-      window.clearInterval(intervalId)
+      window.clearInterval(intervalId);
       // console.log('end');
-    }
-  }, [])
-  
+    };
+  }, []);
+
   useEffect(() => {
-    // console.log('updated');
-    
+    console.log('updated');
+
     document.title = 'counter:' + time;
     window.localStorage.setItem('time-key', time);
 
     return () => {
       // debugger
-      // console.log('updated end');
-    }
+      console.log('updated end');
+    };
   }, [time]);
 
   return (
@@ -42,7 +42,7 @@ const Timer = () => {
       <time>{time}</time>
       <span>秒経過</span>
     </h3>
-    );
+  );
 };
 
 export default Example;
