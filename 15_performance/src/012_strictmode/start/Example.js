@@ -1,27 +1,29 @@
-import { useState } from "react";
-import "./Example.css";
+// strictモードでは、2回レンダリングされる
+
+import { useState } from 'react';
+import './Example.css';
 
 const Example = () => {
-  console.log("render");
-  
+  console.log('render');
+
   const [countA, setCountA] = useState({
-    val: 0
+    val: 0,
   });
 
-  const obj1 = {val:0};
-  const obj3 = {val:0};
-  const obj2 = { ...obj1};
-  const isSame = Object.is("",false);
-  const isSameEqual = "" == false;
+  const obj1 = { val: 0 };
+  const obj3 = { val: 0 };
+  const obj2 = { ...obj1 };
+  const isSame = Object.is('', false);
+  const isSameEqual = '' == false;
   console.log(isSameEqual);
-  
+
   return (
     <div className="parent">
       <div>
         <h3>再レンダリング？</h3>
         <button
           onClick={() => {
-            setCountA(prev => {
+            setCountA((prev) => {
               const newState = { ...prev };
               // prev.val = 1;
               return newState;
