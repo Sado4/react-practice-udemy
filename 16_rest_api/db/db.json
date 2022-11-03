@@ -2,7 +2,7 @@
   "todo": [
     {
       "id": "c5868bfe-fa1d-4891-acd3-bc43959a9bb7",
-      "content": "洗濯",
+      "content": "洗濯aaa",
       "editing": false,
       "completed": true
     },
@@ -14,7 +14,7 @@
     },
     {
       "id": "f2c38014-e2df-40ae-ac93-36303b8771ce",
-      "content": "買い物",
+      "content": "買い物しましたよっとね",
       "editing": false,
       "completed": false
     }
@@ -41,11 +41,11 @@
     },
     {
       "id": 3,
-      "username": "piyo三郎",
-      "age": 50,
+      "username": "hoge太郎44",
+      "age": 62,
       "hobbies": [
-        "筋トレ",
-        "水泳"
+        "サッカー",
+        "野球"
       ],
       "premiumAccount": true
     }
