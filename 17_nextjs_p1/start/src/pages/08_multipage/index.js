@@ -4,6 +4,10 @@ export default function Multipage() {
   const router = useRouter();
   const step = router.query.step ?? 0;
 
+  /**
+   * シングルコンポーネントで、複数画面を作成するにはクエリパラメタとして、
+   * userRouterのqueryオブジェクトで取得した値を使ってpushする
+   */
   const goToStep = (_step, asPath) => {
     router.push(`/08_multipage?step=${_step}`, asPath);
   };
