@@ -2,15 +2,15 @@
 import { useState } from 'react';
 import Form from '../../components/form';
 import List from '../../components/list';
-// import { useAppContext } from '../../context/AppContext';
-// import { useRouter } from 'next/router';
+import { useAppContext } from '../../context/AppContext';
+import { useRouter } from 'next/router';
 // import Link from 'next/link';
 
 export default function PageLink() {
   const initialState = { name: '', birth: '' };
   const [value, setValue] = useState(initialState);
-  const [list, setList] = useState([]);
-  // const router = useRouter();
+  const [list, setList] = useAppContext();
+  const router = useRouter();
 
   const handleChange = (e) => {
     const inputId = e.target.id;
@@ -34,6 +34,13 @@ export default function PageLink() {
         birthValue={value.birth}
       />
       <List list={list} />
+      <button
+        onClick={() => {
+          router.push('/09_multipage_state/list');
+        }}
+      >
+        リストページへ
+      </button>
     </div>
   );
 }
