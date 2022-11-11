@@ -4,9 +4,10 @@ import { useEffect, useState } from 'react';
 // export default function SSR({message}) {
 // 初初期表示のときは、SSRが実行される
 // 画面遷移時はCSRで表示される
-export default function SSR({ message }) {
+// export default function SSR({ message }) {
+export default function SSR() {
   console.log('hello');
-  console.log(message);
+  // console.log(message);
 
   // windowはブラウザ上(クライアント側)でしか使えない(SSR(サーバー側(Node.js))では使えない)
   //   window.document.title = 'SSR';
@@ -29,15 +30,15 @@ export default function SSR({ message }) {
   );
 }
 
-export async function getServerSideProps(context) {
-  const { cookie } = context.req.headers;
-  console.log('cookie', cookie);
-  console.log('getServerSideProps is executed');
-  return {
-    redirect: {
-      destination: '/',
-      permanent: false,
-    },
-    props: { message: 'From Server Side Props' },
-  };
-}
+// export async function getServerSideProps(context) {
+//   const { cookie } = context.req.headers;
+//   console.log('cookie', cookie);
+//   console.log('getServerSideProps is executed');
+//   return {
+//     redirect: {
+//       destination: '/',
+//       permanent: false,
+//     },
+//     props: { message: 'From Server Side Props' },
+//   };
+// }
