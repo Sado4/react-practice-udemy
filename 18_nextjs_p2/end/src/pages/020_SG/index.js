@@ -4,6 +4,7 @@ export default function IndexPage({ message }) {
   return <h3>SG:{message}</h3>;
 }
 
+// getStaticPropsはbuild時にしか実行されない(SGで先にデータを取得しておく)
 export async function getStaticProps() {
   console.log('getStaticProps');
 
