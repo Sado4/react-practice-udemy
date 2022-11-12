@@ -16,6 +16,7 @@ export default function Page({ id, date }) {
 // ダイナミックルーティングのパスを指定
 // SGでダイナミックルーティングを実装する場合は、
 // getStaticPathsでパスを指定する必要がある(ビルド時にHTMLが生成され、決められたパスしかアクセスできないため)
+// このパスは、ビルド時に事前に生成される
 export async function getStaticPaths() {
   console.log('getStaticPaths executed');
   return {
@@ -25,6 +26,7 @@ export async function getStaticPaths() {
 }
 
 // paramsでパスの値を受け取り、propsでparamsのidを返す
+// bulid時に実行される
 export async function getStaticProps({ params }) {
   console.log('getStaticProps executed');
   const date = new Date();
