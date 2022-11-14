@@ -1,6 +1,7 @@
-import Link from "next/link";
+import Link from 'next/link';
 
 export default function ArticleList({ list }) {
+  // console.log(list);
   return (
     <ul className="list">
       {list.map((item) => {

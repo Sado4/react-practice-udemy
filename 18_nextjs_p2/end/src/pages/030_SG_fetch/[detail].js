@@ -1,12 +1,12 @@
 // POINT [SG]フェッチしたデータで動的なパスに応じてページを作成
-import axios from "axios";
+import axios from 'axios';
 
-import Head from "next/head";
-import { useRouter } from "next/router";
+import Head from 'next/head';
+import { useRouter } from 'next/router';
 
-import Article from "../../components/article";
+import Article from '../../components/article';
 
-const ENDPOINT = "http://localhost:4030/articles";
+const ENDPOINT = 'http://localhost:4030/articles';
 
 export default function Detail({ article }) {
   const router = useRouter();
@@ -15,10 +15,10 @@ export default function Detail({ article }) {
   }
   return (
     <>
-        <Head>
-            <title>{article.title}</title>
-        </Head>
-        <Article data={article} />
+      <Head>
+        <title>{article.title}</title>
+      </Head>
+      <Article data={article} />
     </>
   );
 }
@@ -37,6 +37,7 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params }) {
   const url = `${ENDPOINT}/${params.detail}`;
+  // なぜidつきのURLを叩くと、該当のデータが返ってくるのか？
   const result = await axios.get(url).then((res) => res.data);
   return { props: { article: result } };
 }
