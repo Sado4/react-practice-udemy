@@ -3,13 +3,16 @@ import { useState } from 'react';
 const Form = ({ todos, addedTodo }) => {
   const [enteredTodo, setEnteredTodo] = useState('');
 
-  const addTodo = (todos, e) => {
+  const addTodo = (e) => {
     e.preventDefault();
+    console.log(todos);
 
     const newTodo = {
       id: todos.length + 1,
       content: enteredTodo,
     };
+
+    console.log(newTodo);
 
     addedTodo(newTodo);
 
@@ -19,7 +22,7 @@ const Form = ({ todos, addedTodo }) => {
     <>
       <form
         onSubmit={(e) => {
-          addTodo(todos, e);
+          addTodo(e);
         }}
       >
         <input
