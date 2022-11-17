@@ -1,19 +1,18 @@
-import { Todo } from './Example';
+import type { Task } from "./Example";
 
+// TaskListPropsは、TaskListコンポーネントに渡される`props`の型を定義する
 type TaskListProps = {
-  tasks: Todo[];
-};
+  tasks: Task[];
+}
 
-// ジェネリクスでPropsの型を指定する
-
-const TaskList: React.FC<TaskListProps> = ({ tasks }) => {
+const TaskList: React.FC<TaskListProps> = (props) => {
   return (
     <ul>
-      {tasks.map((task) => (
+      {props.tasks.map(task => (
         <li key={task.id}>{task.text}</li>
       ))}
     </ul>
-  );
-};
+  )
+}
 
 export default TaskList;
